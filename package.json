@@ -1,0 +1,14 @@
+{
+  "name": "imc",
+  "version": "1.0.0",
+  "description": "Exercício de criar um programa que calcula IMC do curso de NodeJS da Estartando Devs ",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Felipe Rosas",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^27.5.1"
+  }
+}
