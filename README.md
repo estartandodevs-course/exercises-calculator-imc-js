@@ -8,7 +8,7 @@ O IMC é reconhecido como padrão internacional para avaliar o grau de sobrepeso
 
 Exemplo de como calcular o IMC:
 
-`IMC = 80 kg ÷ (1,80 m × 1,80 m) = 24,69 kg/m2 (Peso ideal)`
+`IMC = 80 kg ÷ (180 m × 180 m) = 24,69 kg/m2 (Peso normal)`
 
 ---
 
@@ -17,7 +17,7 @@ Exemplo de como calcular o IMC:
 | Valor de IMC          | Classificação      |
 | --------------------- | ------------------ |
 | Menor que 18,5 kg/m 2 | Abaixo do peso     |
-| 18,5 a 24,9 kg/m 2    | Normal             |
+| 18,5 a 24,9 kg/m 2    | Peso normal        |
 | 25 a 29,9 kg/m 2      | Sobrepeso          |
 | 30 a 34,9 kg/m 2      | Obesidade grau I   |
 | 35 a 39,9 kg/m 2      | Obesidade grau II  |
