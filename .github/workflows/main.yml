@@ -30,7 +30,7 @@ jobs:
         run: yarn install --frozen-lockfile
 
       - name: Test
-        run: yarn test:evaluation
+        run: yarn test:evaluation || true
 
       - name: Read result of test
         id: resultOutput
@@ -40,7 +40,7 @@ jobs:
 
       - name: Run evaluator
         id: evaluator
-        uses: estartandodevs-course/evaluator-action@v1.0.2
+        uses: estartandodevs-course/evaluator-action@v1.1.3
         with:
           testResults: ${{ steps.resultOutput.outputs.resultOfOutputTests }}
 
