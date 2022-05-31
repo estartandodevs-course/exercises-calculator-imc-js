@@ -14,10 +14,10 @@ function calculateImc(weight = '', height = '') {
   }
 
   else {
-    const imcValue = (weight / Math.pow(height, 2) * 10000)
+    const imcValue = Math.floor(weight / Math.pow(height, 2) * 10000)
     for (i = 0; i < options.length; i++) {
       if (imcValue >= options[i].min && imcValue <= options[i].max) {
-        imcCalculado = { "imc": Math.floor(imcValue), "description": options[i].description }
+        imcCalculado = { "imc": imcValue, "description": options[i].description }
         return imcCalculado
       }
     }
