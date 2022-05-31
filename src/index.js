@@ -14,8 +14,21 @@
 // TODO 4:
 // Retornar o erro:  "weight and/or height are not numbers" se os valores de peso ou altura não forem números.
 
+const options = require('./imcResultOptions')
+
+const weight = 80
+const height = 1.75
+
 function calculateImc(weight, height) {
-  // TODO: Implemente aqui
+  const imcValue = (weight / Math.pow(height, 2))
+  for (i = 0; i < options.length; i++){
+    if(imcValue >= options[i].min && imcValue < options[i].max){
+      return `Imc: ${Math.round(imcValue)}, description: ${options[i].description}`
+    }
+  }
 }
 
 module.exports = calculateImc;
+
+console.log(calculateImc(weight, height))
+
