@@ -1,21 +1,31 @@
-// TODO 1:
-// Implemente a função calculateImc para que ela receba os valores
-// de Peso e Altura e retorne o valor do IMC e a descrição do IMC .
+const options = require('./imcResultOptions')
 
-// Exemplo de retorno:  { imc: 23, description: "Sobrepeso" }
-// Você pode usar o array de opções imcResultOptions.js para descrever o retorno.
 
-// TODO 2:
-// Retornar o erro: "weight and height are required" se não receber os valores de peso e altura.
+function calculateImc(weight = '', height = '') {
+  treatError(weight, height)
+  const imcValue = Math.floor(weight / Math.pow(height, 2) * 10000)
+  for (i = 0; i < options.length; i++) {
+    if (imcValue >= options[i].min && imcValue <= options[i].max) {
+      imcCalculado = { "imc": imcValue, "description": options[i].description }
+      return imcCalculado
+    }
+  }
+}
 
-// TODO 3:
-// Retornar o erro: "weight and height cannot be negative" se os valores de peso ou altura forem negativos.
+function treatError(weight, height) {
+  if (weight === '' || height === '') {
+    throw new Error("weight and height are required")
+  }
 
-// TODO 4:
-// Retornar o erro:  "weight and/or height are not numbers" se os valores de peso ou altura não forem números.
+  else if (weight < 0 || height < 0) {
+    throw new Error("weight and height cannot be negative")
+  }
 
-function calculateImc(weight, height) {
-  // TODO: Implemente aqui
+  else if (typeof (weight) != 'number' || typeof (height) != 'number') {
+    throw new Error("weight and/or height are not numbers")
+  }
 }
 
 module.exports = calculateImc;
+
+
