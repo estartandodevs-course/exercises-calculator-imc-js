@@ -1,6 +1,18 @@
 const options = require('./imcResultOptions')
 
+
 function calculateImc(weight = '', height = '') {
+  treatError(weight, height)
+  const imcValue = Math.floor(weight / Math.pow(height, 2) * 10000)
+  for (i = 0; i < options.length; i++) {
+    if (imcValue >= options[i].min && imcValue <= options[i].max) {
+      imcCalculado = { "imc": imcValue, "description": options[i].description }
+      return imcCalculado
+    }
+  }
+}
+
+function treatError(weight, height) {
   if (weight === '' || height === '') {
     throw new Error("weight and height are required")
   }
@@ -12,16 +24,8 @@ function calculateImc(weight = '', height = '') {
   else if (typeof (weight) != 'number' || typeof (height) != 'number') {
     throw new Error("weight and/or height are not numbers")
   }
-
-  else {
-    const imcValue = Math.floor(weight / Math.pow(height, 2) * 10000)
-    for (i = 0; i < options.length; i++) {
-      if (imcValue >= options[i].min && imcValue <= options[i].max) {
-        imcCalculado = { "imc": imcValue, "description": options[i].description }
-        return imcCalculado
-      }
-    }
-  }
 }
 
 module.exports = calculateImc;
+
+
