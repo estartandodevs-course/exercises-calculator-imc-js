@@ -11,5 +11,13 @@
   "license": "ISC",
   "devDependencies": {
     "jest": "^27.5.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pedrobuenoxs/exercises-calculator-imc-js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/pedrobuenoxs/exercises-calculator-imc-js/issues"
+  },
+  "homepage": "https://github.com/pedrobuenoxs/exercises-calculator-imc-js#readme"
 }
